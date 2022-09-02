@@ -347,6 +347,48 @@ input[type=submit]:hover {
     border: 1px solid #c3073f;
 }
 
+/* section for When the quiz is finished */
+.restart-and-score {
+    background-color: #1a1a1d;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.image-holder {
+    width: 200px;
+    height: 200px;
+    background-color: #1a1a1d;
+}
+
+.restart-and-score img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-top: 5%;
+}
+
+#restart-button {
+    background: #c3073f;
+    color: white;
+    width: 30%;
+    margin: 0 35%;
+    padding: 10px;
+    border-radius: .5rem;
+    margin-top: 5%;
+}
+
+#restart-button:hover {
+    color: #c3073f;
+    background: #1a1a1d;
+    border-color: #c3073f;
+}
+
 
 /* All the media quries */
 @media screen and (max-width: 1200px) {
