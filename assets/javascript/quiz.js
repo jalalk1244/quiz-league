@@ -1,3 +1,6 @@
+// All the constansts
+const startButton = document.getElementById('start-button');
+
 // Open the menu when the toggle button is clicked
 function openMenu(){
     let navListContainer = document.getElementsByClassName('toggle-nav-list-container')[0];
@@ -38,3 +41,13 @@ let links = document.getElementsByClassName('nav-link');
 for (let link of links) {
     link.addEventListener('click', linkNavigation);
 }
+
+// Sart the quiz
+function startGame() {
+    let startSection = document.getElementById('start-page');
+    let quizSection = document.getElementById('quiz-section');
+    startSection.classList.add('hidden');
+    quizSection.classList.remove('hidden');
+   }
+
+  startButton.addEventListener('click', startGame);
