@@ -24,6 +24,8 @@ body {
     width: 1000px;
     height: 600px;
     background-color: #1a1a1d;
+    position: relative;
+    overflow: hidden;
 }
 
 /* Styles for the header in the game-container */
@@ -37,7 +39,7 @@ body {
     background-color: #c3073f;
 }
 
-.nav-items {
+.nav-items, .nav-items-toggle {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -63,6 +65,48 @@ body {
     font-size: 1.5rem;
 }
 
+/* Styles for the toggle menu */
+#toggle-button {
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    background-color: transparent;
+    position: relative;
+    margin-top: 10px;
+    display: none;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.toggle-nav-list-container {
+    display: none;
+    background: #c3073f;
+    height: 200px;
+    width: 100px;
+    position: absolute;
+    right: 0;
+    top: 70px;
+}
+
+.nav-items-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-items-toggle li a {
+    text-decoration: none;
+    color: white; 
+    margin-bottom: 10px;
+}
+
+.nav-items-toggle li a:hover {
+    font-size: 150%;
+}
+
+
 /* All the media quries */
 @media screen and (max-width: 1200px) {
     .game-container {
@@ -75,6 +119,17 @@ body {
     .game-container {
         width: 550px;
         height: 600px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+    .nav-items {
+        display: none;
+    }
+    
+    #toggle-button {
+        display: block;
     }
 }
 
