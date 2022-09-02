@@ -248,17 +248,116 @@ input[type=submit]:hover {
     color: white;
 }
 
+/* The question and asnwer section */
+#quiz-section {
+    border: 1px solid white;
+    display: grid; 
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 20% 40% 10%;
+    grid-gap: 5%;
+    width: 1000px;
+    height: 600px;
+    background-color: #1a1a1d;
+    position: relative;
+}
+
+/* Styles for the quistion area */
+.question-container {
+    display: grid;
+    grid-template-columns: 100%;
+    padding: 10px;
+}
+
+.question {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #c3073f;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    text-align: center;
+    font-size: 25px;
+}
+
+/*styles fot the answers */
+.answer-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    padding: 10px;
+    grid-gap: 10px;
+    justify-content: center;
+}
+
+.answer-button {
+    background: transparent;
+    color: white;
+    border: 1px solid #c3073f;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.answer-button:hover {
+    color: #c3073f;
+    border-color: white;
+    font-size: 150%;
+}
+
+.answer-right {
+    background-color: green;
+}
+
+.answer-wrong {
+    background-color: red;
+}
+
+/* progress bar and timer */
+.timer-and-progress {
+    border: 1px solid #c3073f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px;
+    padding: 0 30px;
+}
+
+.timer {
+    width: 150px;
+    height: 20px;
+    border: 1px solid #c3073f;
+}
+
+.timer-bar {
+    width: 15px;
+    height: 100%;
+    background: green;
+    border: 1px solid green;
+}
+
+.progress-bar {
+    width: 150px;
+    height: 20px;
+    display: flex;
+}
+
+.progress-circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid #c3073f;
+}
+
 
 /* All the media quries */
 @media screen and (max-width: 1200px) {
-    .game-container {
+    .game-container, #quiz-section {
         width: 700px;
         height: 500px;
     }
 }
 
 @media screen and (max-width: 992px) {
-    .game-container {
+    .game-container, #quiz-section {
         width: 550px;
         height: 600px;
     }
@@ -280,16 +379,35 @@ input[type=submit]:hover {
 }
 
 @media screen and (max-width: 600px) {
-    .game-container {
+    .game-container, #quiz-section {
         width: 350px;
         height: 500px;
     }
 
+    /* The question and answer section */
+    .question {
+        margin-top: 10px;
+        font-size: 17px;
+    }
+
+    .answer-button {
+        font-size: 17px;
+    }
+
+    .answer-container {
+        grid-template-columns: 100%;
+    }
+
+    .timer-and-progress {
+        flex-direction: column;
+    }
+
+    /*The info section */
     .rules {
         padding: 10px 19px;
     }
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
