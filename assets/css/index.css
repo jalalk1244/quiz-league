@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Josefin+Slab:wght@600&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -12,6 +14,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: josefin-slab, sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -21,6 +24,7 @@ body {
 h1, h2, h3 {
     color: #c3073f;
     font-size: 1.5rem;
+    font-family: josefin-sans, 'Times New Roman', Times, serif;
 }
 
 /* Styles for the game container */
