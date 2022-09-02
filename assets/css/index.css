@@ -14,6 +14,15 @@ body {
     align-items: center;
 }
 
+::-webkit-scrollbar {
+    width: 0;
+}
+
+h1, h2, h3 {
+    color: #c3073f;
+    font-size: 1.5rem;
+}
+
 /* Styles for the game container */
 .game-container {
     border: 1px solid white;
@@ -170,6 +179,23 @@ input[type=text], input[type=email], textarea {
     border-color: #c3073f;
 }
 
+/*Styles for the rules and info section*/
+.rules-and-info {
+    text-align: center;
+    grid-template-rows: auto;
+    overflow-y: scroll;
+}
+
+.rules {
+    margin: 10px;
+    padding: 10px 100px;
+}
+
+.rules-and-info h1 {
+    text-align: left;
+    margin-left: 20px;
+}
+
 
 /* All the media quries */
 @media screen and (max-width: 1200px) {
@@ -183,6 +209,10 @@ input[type=text], input[type=email], textarea {
     .game-container {
         width: 550px;
         height: 600px;
+    }
+
+    .rules {
+        padding: 10px 30px;
     }
 }
 
@@ -201,6 +231,10 @@ input[type=text], input[type=email], textarea {
     .game-container {
         width: 350px;
         height: 500px;
+    }
+
+    .rules {
+        padding: 10px 19px;
     }
 }
 
