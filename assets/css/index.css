@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0; 
+    padding: 0;
+    height: 100vh;
+    background-color: #1a1a1d;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styles for the game container */
+.game-container {
+    border: 1px solid white;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 90%;
+    grid-gap: 5%;
+    width: 1000px;
+    height: 600px;
+    background-color: #1a1a1d;
+}
+
+/* Styles for the header in the game-container */
+.header {
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    height: fit-content;
+    background-color: #c3073f;
+}
+
+.nav-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-items li {
+    display: inline-block;
+    padding: 0 20px;
+    cursor: pionter;
+}
+
+.nav-items li a {
+    text-decoration: none;
+    color: white; 
+    transition: all .3s ease 0s;
+}
+
+.nav-items li a:hover {
+    font-size: 150%;
+}
+
+.quiz-heading {
+    font-size: 1.5rem;
+}
