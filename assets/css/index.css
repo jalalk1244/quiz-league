@@ -191,9 +191,61 @@ input[type=text], input[type=email], textarea {
     padding: 10px 100px;
 }
 
-.rules-and-info h1 {
+.rules-and-info h1,
+.contact-form h1 {
     text-align: left;
     margin-left: 20px;
+}
+
+/* Style for the contact form */
+.contact-container {
+    display: grid;
+    grid-template-columns: 100%;
+    margin: 20px;
+    grid-column-gap: 10px;
+    color: white;
+}
+
+.contact-form {
+    width: 100%;
+    background: transparent;
+    color: white;
+    font-weight: 500;
+    padding: 10px 5px;
+}
+
+.contact-form label {
+    margin: 5px 10px;
+    display: block;
+    text-align: center;
+}
+
+.contact-form div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-form input, .contact-form textarea {
+    display: block;
+    width: 80%;
+    padding: 10px 5px;
+    margin: 10px 20px;
+}
+
+input[type=submit] {
+    background: #c3073f;
+    color: white;
+    border-radius: 60px;
+    width: 33%;
+    margin: 10px 20px;
+}
+
+input[type=submit]:hover {
+    background: transparent;
+    border-color: #c3073f;
+    color: white;
 }
 
 
