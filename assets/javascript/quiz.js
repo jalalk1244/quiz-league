@@ -147,6 +147,27 @@ function displayQuestion() {
     `
 }
 
+
+let buttons = document.getElementsByClassName('answer-button');
+
+function controllAnswer(event) {
+    let choice = event.target.id;
+
+    //if answer is correct
+    if(choice === questions[currentQuestionIndex].correctAnswer) {
+        event.target.classList.add('answer-right');
+    }else { //if answer is wrong
+        event.target.classList.add('answer-wrong');
+    }
+    //display the next question
+    if(currentQuestionIndex < lastQuestion) {
+        nexButton.classList.remove('hidden');
+    }else {
+        let restartSection = document.getElementById('restart');
+        restartSection.classList.remove('hidden'); //Show the restart section
+    }
+}
+
 function reset() {
     while (answerBox.firstChild) {
         answerBox.removeChild(answerBox.lastChild);
