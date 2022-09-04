@@ -2,6 +2,7 @@
 const startButton = document.getElementById('start-button');
 const answerBox = document.getElementById('answer-box');
 const theQuestion = document.getElementById('question');
+const nexButton = document.getElementById('next-button');
 
 // Open the menu when the toggle button is clicked
 function openMenu(){
@@ -49,6 +50,7 @@ function startGame() {
     let startSection = document.getElementById('start-page');
     let quizSection = document.getElementById('quiz-section');
     startSection.classList.add('hidden');
+    displayQuestion();
     quizSection.classList.remove('hidden');
    }
 
@@ -144,3 +146,15 @@ function displayQuestion() {
     <button class="answer-button" id="d" onclick="controllAnswer(event);">${questions[currentQuestionIndex].answerD}</button>
     `
 }
+
+function reset() {
+    while (answerBox.firstChild) {
+        answerBox.removeChild(answerBox.lastChild);
+    }
+    nexButton.classList.add('hidden');
+    if (currentQuestionIndex < lastQuestion) {
+        currentQuestionIndex++;
+        displayQuestion();
+    }
+}
+nexButton.addEventListener('click', reset); // Reset to default after every question
