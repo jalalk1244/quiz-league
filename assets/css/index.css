@@ -351,6 +351,21 @@ input[type=submit]:hover {
     border: 1px solid #c3073f;
 }
 
+/* The next button */
+#next-button {
+    background: #c3073f;
+    color: white;
+    padding: 10px;
+    border-radius: .5rem;
+
+}
+
+#next-button:hover {
+    background: #1a1a1d;
+    border-color: white;
+    color: #c3073f;
+}
+
 /* section for When the quiz is finished */
 .restart-and-score {
     background-color: #1a1a1d;
