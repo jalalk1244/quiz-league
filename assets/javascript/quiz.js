@@ -3,6 +3,7 @@ const startButton = document.getElementById('start-button');
 const answerBox = document.getElementById('answer-box');
 const theQuestion = document.getElementById('question');
 const nexButton = document.getElementById('next-button');
+const restartButton = document.getElementById('restart-button');
 
 // Open the menu when the toggle button is clicked
 function openMenu(){
@@ -201,3 +202,11 @@ function displayProgressRight() {
   let progressCircles = document.getElementsByClassName('progress-circle');
   progressCircles[currentQuestionIndex].style.backgroundColor = 'green';
 }
+
+function restartQuiz() {
+  let startSection = document.getElementById('start-page');
+  let quizSection = document.getElementById('quiz-section');
+  quizSection.classList.add('hidden');
+  startSection.classList.remove('hidden');
+}
+restartButton.addEventListener('click', restartQuiz); // got to home page
