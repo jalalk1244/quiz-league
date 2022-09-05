@@ -54,6 +54,7 @@ function startGame() {
     startSection.classList.add('hidden');
     displayQuestion();
     quizSection.classList.remove('hidden');
+    updateQuestionNumber();
     startTimer();
     currentTime = 0;
    }
@@ -154,6 +155,7 @@ function displayQuestion() {
 
 
 let buttons = document.getElementsByClassName('answer-button');
+let score = 0;
 
 function controllAnswer(event) {
     let choice = event.target.id;
@@ -164,6 +166,7 @@ function controllAnswer(event) {
 
     //if answer is correct
     if(choice === questions[currentQuestionIndex].correctAnswer) {
+        score += 10;
         event.target.classList.add('answer-right');
         for (let button of buttons) {
           if(button.id !== questions[currentQuestionIndex].correctAnswer) {
@@ -171,6 +174,7 @@ function controllAnswer(event) {
           }
         }
         displayProgressRight();
+        updateScore();
     }else { //if answer is wrong
         event.target.classList.add('answer-wrong');
         displayProgressWrong();
@@ -193,6 +197,7 @@ function reset() {
     if (currentQuestionIndex < lastQuestion) {
         currentQuestionIndex++;
         displayQuestion();
+        updateQuestionNumber();
         startTimer();
         currentTime = 0;
     }
@@ -250,4 +255,14 @@ function timingQuestions() {
 
 function startTimer() {
   interval = setInterval(timingQuestions, 1000);
+}
+
+function updateQuestionNumber () {
+  let questionNumber = document.getElementById('question-number');
+  questionNumber.innerHTML = `${currentQuestionIndex + 1} / ${questions.length}`;
+}
+
+function updateScore() {
+  let scoreSpan = document.getElementById('score');
+  scoreSpan.innerHTML = `${score}`;
 }
