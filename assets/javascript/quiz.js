@@ -166,8 +166,10 @@ function controllAnswer(event) {
             button.classList.add('answer-wrong');
           }
         }
+        displayProgressRight();
     }else { //if answer is wrong
         event.target.classList.add('answer-wrong');
+        displayProgressWrong();
     }
     //display the next question
     if(currentQuestionIndex < lastQuestion) {
@@ -189,3 +191,13 @@ function reset() {
     }
 }
 nexButton.addEventListener('click', reset); // Reset to default after every question
+
+function displayProgressWrong() {
+  let progressCircles = document.getElementsByClassName('progress-circle');
+  progressCircles[currentQuestionIndex].style.backgroundColor = 'red';
+}
+
+function displayProgressRight() {
+  let progressCircles = document.getElementsByClassName('progress-circle');
+  progressCircles[currentQuestionIndex].style.backgroundColor = 'green';
+}
