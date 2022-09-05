@@ -49,20 +49,20 @@ for (let link of links) {
 }
 
 // Sart the quiz
-function startGame() {
-    let startSection = document.getElementById('start-page');
-    let quizSection = document.getElementById('quiz-section');
-    let restartSection = document.getElementById('restart');
-    restartSection.classList.add('hidden');
-    startSection.classList.add('hidden');
-    displayQuestion();
-    quizSection.classList.remove('hidden');
-    updateQuestionNumber();
-    startTimer();
-    currentTime = 0;
-   }
-
-  startButton.addEventListener('click', startGame);
+function startGame(e) {
+  e.preventDefault();
+  let startSection = document.getElementById('start-page');
+  let quizSection = document.getElementById('quiz-section');
+  let restartSection = document.getElementById('restart');
+  restartSection.classList.add('hidden');
+  startSection.classList.add('hidden');
+  displayQuestion ();
+  quizSection.classList.remove('hidden');
+  updateQuestionNumber();
+  startTimer();
+  currentTime = 0;
+  return false
+ }
 
 
 
