@@ -379,6 +379,13 @@ input[type=submit]:hover {
 
 }
 
+#message-and-image-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .image-holder {
     width: 200px;
     height: 200px;

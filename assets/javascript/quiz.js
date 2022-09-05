@@ -5,6 +5,7 @@ const theQuestion = document.getElementById('question');
 const nexButton = document.getElementById('next-button');
 const restartButton = document.getElementById('restart-button');
 const timerBar = document.getElementById('timer');
+const messageAndImageHolder = document.getElementById('message-and-image-holder');
 
 // Open the menu when the toggle button is clicked
 function openMenu(){
@@ -51,6 +52,8 @@ for (let link of links) {
 function startGame() {
     let startSection = document.getElementById('start-page');
     let quizSection = document.getElementById('quiz-section');
+    let restartSection = document.getElementById('restart');
+    restartSection.classList.add('hidden');
     startSection.classList.add('hidden');
     displayQuestion();
     quizSection.classList.remove('hidden');
@@ -184,6 +187,7 @@ function controllAnswer(event) {
         nexButton.classList.remove('hidden');
     }else {
         let restartSection = document.getElementById('restart');
+        showOverAllScore();
         restartSection.classList.remove('hidden'); //Show the restart section
     }
     clearInterval(interval); // stop the timer
@@ -225,6 +229,7 @@ restartButton.addEventListener('click', restartQuiz); // got to home page
 
 let interval;
 let currentTime = 0;
+
 //Timer every question
 function timingQuestions() {
   let timeForEveryQuestion = 30; // 30s
@@ -248,6 +253,7 @@ function timingQuestions() {
     }
     else {
       let restartSection = document.getElementById('restart');
+      showOverAllScore();
       restartSection.classList.remove('hidden'); //Show the restart section
     }
   }
@@ -265,4 +271,48 @@ function updateQuestionNumber () {
 function updateScore() {
   let scoreSpan = document.getElementById('score');
   scoreSpan.innerHTML = `${score}`;
+}
+
+//Show the overall score based on the answers
+function showOverAllScore() {
+  let result = Math.round(10 * (score / questions.length));
+  messageAndImageHolder.innerHTML = 
+  (result >= 100) ? // when the user answers 100% right
+  `
+  <p id="overall-score-message">Congratulations you have won the World Cup</p>
+  <div class="image-holder" id="image-holder">
+      <img src="./assets/images/world-cup-trophy.jpg" alt="World Cup trophy">
+  </div>
+  `:
+  (result >= 80) ? // when the user answers above 80% right
+  `
+  <p id="overall-score-message">Congratulations you have won the Champions League</p>
+  <div class="image-holder" id="image-holder">
+      <img src="./assets/images/champions-league-trophy.jpg" alt="champions league trophy">
+  </div>
+  `:
+  (result >= 60) ? // when the user answers above 60% right
+  `
+  <p id="overall-score-message">Congratulations you have won the Europa League</p>
+  <div class="image-holder" id="image-holder">
+      <img src="./assets/images/europa-league-trophy-removebg-preview.jpg" alt="World Cup trophy">
+  </div>
+  `:
+  (result >= 40) ?  // when the user answers above 40% right
+  `
+  <p id="overall-score-message">Congratulations you have won the Premier League</p>
+  <div class="image-holder" id="image-holder">
+      <img src="./assets/images/premier-league-trophy.jpg" alt="World Cup trophy">
+  </div>
+  `: 
+  (result >= 20) ? // when the user answers above 20% right
+  `
+  <p id="overall-score-message">Congratulations you have won the Conference League</p>
+  <div class="image-holder" id="image-holder">
+      <img src="./assets/images/conference-league-trophy.jpg" alt="World Cup trophy">
+  </div>
+  `: // when the user answer under 10% right
+  `
+  <p id="overall-score-message">You didn't win any trophies this time, better luck next time!</p>
+  `;             
 }
