@@ -139,11 +139,12 @@ let currentQuestionIndex = 0;
 function displayQuestion() {
     theQuestion.innerHTML = questions[currentQuestionIndex].question;
 
+    const {answerA, answerB, answerC, answerD} = questions[currentQuestionIndex]
     answerBox.innerHTML = `
-    <button class="answer-button" id="a" onclick="controllAnswer(event);">${questions[currentQuestionIndex].answerA}</button>
-    <button class="answer-button" id="b" onclick="controllAnswer(event);">${questions[currentQuestionIndex].answerB}</button>
-    <button class="answer-button" id="c" onclick="controllAnswer(event);">${questions[currentQuestionIndex].answerC}</button>
-    <button class="answer-button" id="d" onclick="controllAnswer(event);">${questions[currentQuestionIndex].answerD}</button>
+    <button class="answer-button" id="a" onclick="controllAnswer(event);">${answerA}</button>
+    <button class="answer-button" id="b" onclick="controllAnswer(event);">${answerB}</button>
+    <button class="answer-button" id="c" onclick="controllAnswer(event);">${answerC}</button>
+    <button class="answer-button" id="d" onclick="controllAnswer(event);">${answerD}</button>
     `
 }
 
@@ -152,10 +153,19 @@ let buttons = document.getElementsByClassName('answer-button');
 
 function controllAnswer(event) {
     let choice = event.target.id;
+    //Disable buttons after click
+    for (let button of buttons) {
+      button.disabled = true;
+    }
 
     //if answer is correct
     if(choice === questions[currentQuestionIndex].correctAnswer) {
         event.target.classList.add('answer-right');
+        for (let button of buttons) {
+          if(button.id !== questions[currentQuestionIndex].correctAnswer) {
+            button.classList.add('answer-wrong');
+          }
+        }
     }else { //if answer is wrong
         event.target.classList.add('answer-wrong');
     }
