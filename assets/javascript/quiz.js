@@ -56,6 +56,10 @@ function startGame(e) {
   let restartSection = document.getElementById('restart');
   restartSection.classList.add('hidden');
   startSection.classList.add('hidden');
+  currentQuestionIndex = 0;
+  score = 0;
+  updateScore();
+  resetProgressCircles();
   displayQuestion ();
   quizSection.classList.remove('hidden');
   updateQuestionNumber();
@@ -216,6 +220,13 @@ function displayProgressWrong() {
 function displayProgressRight() {
   let progressCircles = document.getElementsByClassName('progress-circle');
   progressCircles[currentQuestionIndex].style.backgroundColor = 'green';
+}
+
+function resetProgressCircles() {
+  let progressCircles = document.getElementsByClassName('progress-circle');
+  for(let cricle of progressCircles) {
+    cricle.style.backgroundColor = "transparent"
+  }
 }
 
 function restartQuiz() {
