@@ -4,6 +4,7 @@ const answerBox = document.getElementById('answer-box');
 const theQuestion = document.getElementById('question');
 const nexButton = document.getElementById('next-button');
 const restartButton = document.getElementById('restart-button');
+const timerBar = document.getElementById('timer');
 
 // Open the menu when the toggle button is clicked
 function openMenu(){
@@ -53,6 +54,8 @@ function startGame() {
     startSection.classList.add('hidden');
     displayQuestion();
     quizSection.classList.remove('hidden');
+    startTimer();
+    currentTime = 0;
    }
 
   startButton.addEventListener('click', startGame);
@@ -179,6 +182,7 @@ function controllAnswer(event) {
         let restartSection = document.getElementById('restart');
         restartSection.classList.remove('hidden'); //Show the restart section
     }
+    clearInterval(interval); // stop the timer
 }
 
 function reset() {
@@ -189,6 +193,8 @@ function reset() {
     if (currentQuestionIndex < lastQuestion) {
         currentQuestionIndex++;
         displayQuestion();
+        startTimer();
+        currentTime = 0;
     }
 }
 nexButton.addEventListener('click', reset); // Reset to default after every question
@@ -210,3 +216,38 @@ function restartQuiz() {
   startSection.classList.remove('hidden');
 }
 restartButton.addEventListener('click', restartQuiz); // got to home page
+
+
+let interval;
+let currentTime = 0;
+//Timer every question
+function timingQuestions() {
+  let timeForEveryQuestion = 30; // 30s
+  let timeDivWidth = 210; // 210px
+  let timeDivWidthForEverySecond = timeDivWidth / timeForEveryQuestion; // 7px
+  if (currentTime <= timeForEveryQuestion) {
+    console.log(currentTime);
+    timerBar.style.width = currentTime * timeDivWidthForEverySecond + 'px';
+    currentTime++;
+  }
+  else {
+    clearInterval(interval);
+    // Disable buttons after click
+    for (let button of buttons) {
+      button.disabled = true;
+      }
+      displayProgressWrong();
+      //display the next question
+    if (currentQuestionIndex < lastQuestion) {
+      nexButton.classList.remove('hidden');
+    }
+    else {
+      let restartSection = document.getElementById('restart');
+      restartSection.classList.remove('hidden'); //Show the restart section
+    }
+  }
+}
+
+function startTimer() {
+  interval = setInterval(timingQuestions, 1000);
+}
