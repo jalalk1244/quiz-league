@@ -461,10 +461,21 @@ input[type=submit]:hover {
         width: 35%;
     }
 
+    /* The contact form */
+    .contact-form input, 
+    .contact-form textarea {
+        width: 95%;
+    }
+    
+    input[type=submit] {
+        width: 60%;
+    }
+
     /* The question and answer section */
     .question {
         margin-top: 10px;
         font-size: 17px;
+        padding: 5px;
     }
 
     .answer-button {
