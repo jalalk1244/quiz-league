@@ -7,6 +7,14 @@ const restartButton = document.getElementById('restart-button');
 const timerBar = document.getElementById('timer');
 const messageAndImageHolder = document.getElementById('message-and-image-holder');
 
+// close menu when clicked outside it
+window.addEventListener('mouseup', function(e) {
+  let navListContainer = document.getElementsByClassName('toggle-nav-list-container')[0];
+  if(e.target !== navListContainer && e.target.parentNode !== navListContainer) {
+    navListContainer.style.display = 'none';
+  }
+})
+
 // Open the menu when the toggle button is clicked
 function openMenu(){
     let navListContainer = document.getElementsByClassName('toggle-nav-list-container')[0];
@@ -56,6 +64,7 @@ function startGame(e) {
   let restartSection = document.getElementById('restart');
   restartSection.classList.add('hidden');
   startSection.classList.add('hidden');
+  suffle(questions);
   currentQuestionIndex = 0;
   score = 0;
   updateScore();
@@ -326,4 +335,14 @@ function showOverAllScore() {
   `
   <p id="overall-score-message">You didn't win any trophies this time, better luck next time!</p>
   `;             
+}
+
+// suffle array
+function suffle(array){
+  for(let i = 0; i < array.length; i++) {
+    let runningQuestion = array[i];
+    let randomIndex = Math.floor(Math.random() * array.length);
+    array[i] = array[randomIndex];
+    array[randomIndex] = runningQuestion;
+  }
 }
