@@ -103,7 +103,7 @@ let questions = [
       "answerD"  : '100 min',
       "correctAnswer" : "c"
     },{
-      "question" : 'In there is a clean sheet, how many goals were scored?',
+      "question" : 'If there is a clean sheet, how many goals were scored?',
       "answerA"  : '0',
       "answerB"  : 'Less than 10',
       "answerC"  : '1',
