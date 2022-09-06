@@ -448,8 +448,12 @@ input[type=submit]:hover {
 
 @media screen and (max-width: 600px) {
     .game-container, #quiz-section {
-        width: 350px;
+        width: 310px;
         height: 500px;
+    }
+
+    #quiz-section {
+        grid-template-rows: 10% 20% 37% 13%;
     }
 
     /* The username and start button */
@@ -486,13 +490,18 @@ input[type=submit]:hover {
         grid-template-columns: 100%;
     }
 
+    /* The timer and progress section */
     .timer-and-progress {
-        flex-direction: column;
+        flex-wrap: wrap;
     }
 
     /*The info section */
     .rules {
         padding: 10px 19px;
+    }
+
+    #overall-score-message {
+        width: 80%;
     }
 }
 
