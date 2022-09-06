@@ -452,6 +452,15 @@ input[type=submit]:hover {
         height: 500px;
     }
 
+    /* The username and start button */
+    #username {
+        width: 70%;
+    }
+    
+    #start-button {
+        width: 35%;
+    }
+
     /* The question and answer section */
     .question {
         margin-top: 10px;
