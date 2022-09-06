@@ -6,6 +6,8 @@ const nexButton = document.getElementById('next-button');
 const restartButton = document.getElementById('restart-button');
 const timerBar = document.getElementById('timer');
 const messageAndImageHolder = document.getElementById('message-and-image-holder');
+let username;
+console.log(username);
 
 // close menu when clicked outside it
 window.addEventListener('mouseup', function(e) {
@@ -59,6 +61,7 @@ for (let link of links) {
 // Sart the quiz
 function startGame(e) {
   e.preventDefault();
+  username = document.getElementById('username').value;
   let startSection = document.getElementById('start-page');
   let quizSection = document.getElementById('quiz-section');
   let restartSection = document.getElementById('restart');
@@ -299,7 +302,7 @@ function showOverAllScore() {
   messageAndImageHolder.innerHTML = 
   (result >= 100) ? // when the user answers 100% right
   `
-  <p id="overall-score-message">Congratulations you have won the World Cup</p>
+  <p id="overall-score-message">Congratulations ${username}! You have won the World Cup</p>
   <div class="image-holder" id="image-holder">
       <img src="./assets/images/world-cup-trophy.jpg" alt="World Cup trophy">
   </div>
