@@ -252,6 +252,44 @@ input[type=submit]:hover {
     color: white;
 }
 
+/*Styles for the difficulty choice section */
+.difficulty-level {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    height: 600px;
+    background-color: transparent;
+}
+
+.level-options {
+    border: 1px solid white;
+    background-color: #1a1a1d;
+    height: 70%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 10px;
+}
+
+.difficulty-level-button {
+    background: #c3073f;
+    color: white;
+    width: 30%;
+    margin: 0 35%;
+    padding: 10px;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.difficulty-level-button:hover {
+    background: transparent;
+    color: #c3073f;
+    border-color: #c3073f;
+}
+
 /* The question and asnwer section */
 #quiz-section {
     border: 1px solid white;
@@ -418,14 +456,18 @@ input[type=submit]:hover {
 
 /* All the media quries */
 @media screen and (max-width: 1200px) {
-    .game-container, #quiz-section {
+    .game-container, 
+    #quiz-section,
+    .difficulty-level {
         width: 700px;
         height: 500px;
     }
 }
 
 @media screen and (max-width: 992px) {
-    .game-container, #quiz-section {
+    .game-container, 
+    #quiz-section,
+    .difficulty-level {
         width: 550px;
         height: 600px;
     }
@@ -447,7 +489,9 @@ input[type=submit]:hover {
 }
 
 @media screen and (max-width: 600px) {
-    .game-container, #quiz-section {
+    .game-container, 
+    #quiz-section,
+    .difficulty-level {
         width: 310px;
         height: 500px;
     }
@@ -472,6 +516,11 @@ input[type=submit]:hover {
     }
     
     input[type=submit] {
+        width: 60%;
+    }
+
+    /* the difficulty level section */
+    .difficulty-level-button {
         width: 60%;
     }
 

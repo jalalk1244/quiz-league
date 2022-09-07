@@ -11,7 +11,7 @@
     <title>Quiz League</title>
 </head>
 <body>
-   <section class="game-container" id="start-page">
+   <section class="game-container hidden" id="start-page">
     <header class="header">
         <div class="quiz-heading">Quiz League</div>
         <nav>
@@ -85,6 +85,16 @@
         </div>
     </section>
    </section>
+
+   <!-- difficulty level choice section -->
+<section class="difficulty-level" id="difficulty-level">
+    <div class="level-options">
+        <h1>Select difficulty</h1>
+        <button class="difficulty-level-button" id="easy" onclick="checkDifficultyLevel(event)">Beginner</button>
+        <button class="difficulty-level-button" id="medium" onclick="checkDifficultyLevel(event)">Intermediate</button>
+        <button class="difficulty-level-button" id="hard" onclick="checkDifficultyLevel(event)">Advanced</button>
+    </div>
+</section>
 
    <!-- The quiz question and answers section -->
 <section class="hidden" id="quiz-section">
