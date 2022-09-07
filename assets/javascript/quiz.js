@@ -63,20 +63,9 @@ function startGame(e) {
   e.preventDefault();
   username = document.getElementById('username').value;
   let startSection = document.getElementById('start-page');
-  let quizSection = document.getElementById('quiz-section');
-  let restartSection = document.getElementById('restart');
-  restartSection.classList.add('hidden');
+  let difficultyLevel = document.getElementById('difficulty-level');
+  difficultyLevel.classList.remove('hidden');
   startSection.classList.add('hidden');
-  suffle(questions);
-  currentQuestionIndex = 0;
-  score = 0;
-  updateScore();
-  resetProgressCircles();
-  displayQuestion ();
-  quizSection.classList.remove('hidden');
-  updateQuestionNumber();
-  startTimer();
-  currentTime = 0;
   return false
  }
 
@@ -347,13 +336,46 @@ function startGame(e) {
     }
   ];
 
-let lastQuestion = questions.length - 1;
-let currentQuestionIndex = 0; 
+  function checkDifficultyLevel(event) {
+    selectedDiffulty = String(event.target.id);
+    console.log(selectedDiffulty);
+    newData = questions.filter(question => {
+      return question.difficulty === selectedDiffulty;
+    });
+  
+    lastQuestion = newData.length - 1;
+  
+    console.log(newData);
+    let startSection = document.getElementById('start-page');
+    let quizSection = document.getElementById('quiz-section');
+    let restartSection = document.getElementById('restart');
+    let difficultyLevel = document.getElementById('difficulty-level');
+    difficultyLevel.classList.add('hidden');
+    restartSection.classList.add('hidden');
+    startSection.classList.add('hidden');
+    suffle(newData);
+    currentQuestionIndex = 0;
+    score = 0;
+    updateScore();
+    resetProgressCircles();
+    displayQuestion ();
+    quizSection.classList.remove('hidden');
+    updateQuestionNumber();
+    startTimer();
+    currentTime = 0;
+  
+  }
+  
+  let newData;
+  let selectedDiffulty;
+  
+  let lastQuestion;
+  let currentQuestionIndex = 0; 
 
 function displayQuestion() {
-    theQuestion.innerHTML = questions[currentQuestionIndex].question;
+    theQuestion.innerHTML = newData[currentQuestionIndex].question;
 
-    const {answerA, answerB, answerC, answerD} = questions[currentQuestionIndex]
+    const {answerA, answerB, answerC, answerD} = newData[currentQuestionIndex]
     answerBox.innerHTML = `
     <button class="answer-button" id="a" onclick="controllAnswer(event);">${answerA}</button>
     <button class="answer-button" id="b" onclick="controllAnswer(event);">${answerB}</button>
@@ -374,11 +396,11 @@ function controllAnswer(event) {
     }
 
     //if answer is correct
-    if(choice === questions[currentQuestionIndex].correctAnswer) {
+    if(choice === newData[currentQuestionIndex].correctAnswer) {
         score += 10;
         event.target.classList.add('answer-right');
         for (let button of buttons) {
-          if(button.id !== questions[currentQuestionIndex].correctAnswer) {
+          if(button.id !== newData[currentQuestionIndex].correctAnswer) {
             button.classList.add('answer-wrong');
           }
         }
@@ -478,7 +500,7 @@ function startTimer() {
 
 function updateQuestionNumber () {
   let questionNumber = document.getElementById('question-number');
-  questionNumber.innerHTML = `${currentQuestionIndex + 1} / ${questions.length}`;
+  questionNumber.innerHTML = `${currentQuestionIndex + 1} / ${newData.length}`;
 }
 
 function updateScore() {
@@ -488,7 +510,7 @@ function updateScore() {
 
 //Show the overall score based on the answers
 function showOverAllScore() {
-  let result = Math.round(10 * (score / questions.length));
+  let result = Math.round(10 * (score / newData.length));
   messageAndImageHolder.innerHTML = 
   (result >= 100) ? // when the user answers 100% right
   `
