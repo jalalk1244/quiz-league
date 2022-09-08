@@ -1,108 +1,130 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Education for EVERYBODY (EFE)
+Football is the most popular sport and “the beautiful game” in the world. Whether you are a football expert or someone who merely kicks a ball in the park, nothing is more exciting than a football quiz test. Quiz league is a quiz about football with 3 different difficulty levels. You receive 10 points for each correct answer on each level, and you have 30 seconds to answer a question. There are four possible responses for each question. When the quiz is over, depending on your final score, you receive a variety of trophies. The highest trophy you can win is the World Cup, while the lowest is a Conference League trophy.
 
-Welcome jalalk1244,
+![image of the site](./assets/images/site-responsiveness.png)
+## Features
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+**Header in the start section:**
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+![image of the header](./assets/images/header-in-the-start-section.png)
+- This section includes the titles of the site, Quiz League, and a responsive navigation bar with a hamburger menu for smaller screens. This header is also present in the contact and info section.
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+- The nav bar allows users to easily navigate from one section to another and it is responsive for mobile screens with the navigation links turning into a hamburger menu.
 
-`python3 -m http.server`
+**The Landing page:**
 
-A blue button should appear to click: _Make Public_,
+![image of the landig page](./assets/images/the-landing-page.png)
+- The landing page includes a header and a form where the user enters a username before starting the quiz.
 
-Another blue button should appear to click: _Open Browser_.
+- The landing page introduces the users to Quiz League while the header on this section encourages viewers to begin the quiz.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+**The info section:**
 
-A blue button should appear to click: _Make Public_,
+![image of the info section](./assets/images/info-section1.png)
+![image of the info section](./assets/images/info-section2.png)
+- In this section there is information about the quiz, rules and rewards for different high scores.
 
-Another blue button should appear to click: _Open Browser_.
+- TThis section helps the users to understand what type of question this quiz entails and what the rewards are.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+**Contact:**
 
-To log into the Heroku toolbelt CLI:
+![image of the contact section](./assets/images/contact-section.png)
+- The contact section consists of a form where the user can write their name, email and a message to send to us.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- The contact section is an important part of the site as the users can send us feedback about the quiz question, answers and more.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+**Difficulty level:**
 
-------
+![image of the difficulty-level section](./assets/images/difficulty-level.png)
+- In this section the user can choose between: beginner, intermediate and advanced difficulty level on the question.
 
-## Release History
+- The difficulty level choice allows the user to test their knowledge on different level of hardship.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+**The header in the quiz section:**
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+![image of the header](./assets/images/header-quiz-section.png)
+- This header includes the user's score, the site's title and number of  the question the user is currently answering.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+- The score will indicate how well the user is performing throughout the quiz and the current question number shows how many questions that are left to answer.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+**Question and the answer choices:**
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+![image of the question and answers](./assets/images/question-and-answers.png)
+- This is the most important part of the site where the user is presented with a question, based on the difficulty level chosen, and 4 different answer choices where only one answer is right.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- When the correct response is selected, it turns green, while all other options turn red. The incorrect response will turn that option red when it is clicked. 
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+**The timer and progressbar:**
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+![image of the timer and the progress bar](./assets/images/progress-bar-timer.png)
+- This section holds the timer for every question, next button to go to the next question and a progress bar. The timer starts every time the user clicks the next button, or starts the game from the beginning, and it stops when the user has clicked on an answer or after 30 seconds.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+- When the timer stops the next button shows up for the user to go to the next section. If the user has clicked on the right answer a green football will appear in the progress bar and if the user clicked on the wrong answer or ran out of time a red football will appear in the progress bar.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+**The restart section:**
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+![image of the restart section](./assets/images/restart-section.png)
+- When the quiz is finished the user will be presented with a congratulations message with their chosen username and a trophy based on their overall score. Furthermore, an option to restart the quiz will also be presented to the user for restarting the quiz if they want
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+- If you obtain 100% accurate responses, you will be awarded the World Cup trophy.
+- If you get more than 80% of them right, you'll win the Champions League trophy.
+- If you get more than 60% of them right, you'll win the Europa League - trophy.
+- If you get more than 40% of them right, you'll win the Premier League trophy.
+- If you get more than 20% of them right, you'll get the Conference League trophy.
+- You will not receive any trophies if your correct answers are less than 20%.
+- You will also get a commiseration message with your chosen username if your correct answers are less than 20%.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+## Validator Testing
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+- HTML
+    * Validated using [W3C](https://validator.w3.org/) HTML validator and no errors were found.
 
-------
+- CSS
+    * Validated using [Jigsaw](https://jigsaw.w3.org/css-validator/) validator and no error were found.
 
-## FAQ about the uptime script
+- JavaScript
+    * The javascript file was tested with the [JSHint ](https://jshint.com/) validator returning no errors.
 
-**Why have you added this script?**
+- I have also checked and tested the site on different browsers such as Chrome, Firefox, Edge and Safari. By using the chrome dev tools and [Am I Responsive?](https://ui.dev/amiresponsive?url=https://8000-jalalk1244-educationfor-fd3e2i2syhp.ws-eu62.gitpod.io/index.html) website have i also checked and confirmed the responsiveness of the site.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+- I have tested the links that has an href other than "#" and all of them work.
 
-**How will this affect me?**
+- Lighthouse report (Chrome dev-tool)
+    ![image of lighthouse report](./assets/images/Lighthouse.png)
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+## Deployment
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+- I deployed my site on git-hub pages by:
+    * first opening my site's repository
+    * then I clicked on settings
+    * after that in the side bar I clicked on "pages"
+    * I selceted "deploy from a branch"
+    * I selected the main branch
+    * lastly I clicked on save.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+- The live link: https://jalalk1244.github.io/quiz-league/
+     
 
-**So….?**
+## Credit
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+- **Content**
 
-**Can I opt out?**
+    * The questions in the quiz was taken from:  about Somalia in the project page is taken from [The League Paper](https://www.theleaguepaper.com/guest-blogs/373718/best-50-football-quiz-questions-trivia-and-answers/)
+    
+    * The icons used in the nav links, in the progress bar and for the score were taken from [Fontawesome](https://fontawesome.com/)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+    * The fonts used in this site was taken from [google fonts](https://fonts.google.com/) 
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+    * The fav icons in window tab was taken from [MomentPath](https://www.momentpath.com/blog/owners-directors-inspiration-inspirational-quotes-about-teaching-children)
 
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+- **Media**
+    
+    * links to the photos:
+        - [World Cup trophy](https://thumbs.dreamstime.com/b/fifa-world-cup-thropy-reproduction-original-soccer-isolated-white-gold-trophy-awarded-to-winners-41868445.jpg)
+        - [Champions League trophy](https://amballcom.de/product/uefa-champions-league-trophy-45mm/ )
+        - [Europa League trophy](https://amballcom.de/product/uefa-europa-league-trophy-100-mm/)
+        - [Premier League trophy](https://redditchstandard.co.uk/wp-content/uploads/2018/05/trophy.jpg )
+        - [Conference League trophy](https://amballcom.de/product/uefa-europa-conference-league-trophy-100-mm/)
+        - [removebg](https://www.remove.bg/t/change-background) was used to change the background of the images.
