@@ -75,7 +75,7 @@
         <div class="contact-form" id="contact-form">
             <h1>Contact <i class="fa-solid fa-address-book"></i></h1>
             <div class="contact-container">
-                <form class="contact-form">
+                <form class="contact-form" id="contact-from-inputs" action="https://formsubmit.co/quizleague62@gmail.com" method="post">
                     <div>
                         <label for="name">Name</label>
                         <input type="text" name="name" id="name">
@@ -89,7 +89,8 @@
                         <textarea name="message" id="message" cols="40" rows="5"></textarea>
                     </div>
                     <div>
-                        <input type="submit" value="Send">
+                        <!-- <input type="submit" value="Send"> -->
+                        <button type="submit" form="contact-from-inputs"></button>
                     </div>
                 </form>
             </div>
