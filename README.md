@@ -1,4 +1,4 @@
-# Education for EVERYBODY (EFE)
+# Quiz League
 Football is the most popular sport and “the beautiful game” in the world. Whether you are a football expert or someone who merely kicks a ball in the park, nothing is more exciting than a football quiz test. Quiz league is a quiz about football with 3 different difficulty levels. You receive 10 points for each correct answer on each level, and you have 30 seconds to answer a question. There are four possible responses for each question. When the quiz is over, depending on your final score, you receive a variety of trophies. The highest trophy you can win is the World Cup, while the lowest is a Conference League trophy.
 
 ![image of the site](./assets/images/site-responsiveness.png)
