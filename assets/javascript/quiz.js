@@ -438,18 +438,18 @@ nexButton.addEventListener('click', reset); // Reset to default after every ques
 
 function displayProgressWrong() {
   let progressCircles = document.getElementsByClassName('progress-circle');
-  progressCircles[currentQuestionIndex].style.backgroundColor = 'red';
+  progressCircles[currentQuestionIndex].innerHTML = `<i class="fa-regular fa-futbol" style="color: red;"></i>`;
 }
 
 function displayProgressRight() {
   let progressCircles = document.getElementsByClassName('progress-circle');
-  progressCircles[currentQuestionIndex].style.backgroundColor = 'green';
+  progressCircles[currentQuestionIndex].innerHTML = `<i class="fa-regular fa-futbol" style="color: green;"></i>`;
 }
 
 function resetProgressCircles() {
   let progressCircles = document.getElementsByClassName('progress-circle');
   for(let cricle of progressCircles) {
-    cricle.style.backgroundColor = "transparent"
+    cricle.innerHTML = ``
   }
 }
 
@@ -542,7 +542,7 @@ function showOverAllScore() {
   `: 
   (result >= 20) ? // when the user answers above 20% right
   `
-  <p id="overall-score-message">Congratulations <span class="score-name"></span>${username}!</span> You have won the Conference League</p>
+  <p id="overall-score-message">Congratulations <span class="score-name">${username}!</span> You have won the Conference League</p>
   <div class="image-holder" id="image-holder">
       <img src="./assets/images/conference-league-trophy.jpg" alt="World Cup trophy">
   </div>

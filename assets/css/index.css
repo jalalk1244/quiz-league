@@ -400,8 +400,15 @@ input[type=submit]:hover {
 .progress-circle {
     width: 15px;
     height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
     border: 1px solid #c3073f;
+}
+
+.progress-circle i {
+    font-size: 15px;
 }
 
 /* The next button */
