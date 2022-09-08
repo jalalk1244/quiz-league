@@ -1,5 +1,4 @@
 // All the constansts
-const startButton = document.getElementById('start-button');
 const answerBox = document.getElementById('answer-box');
 const theQuestion = document.getElementById('question');
 const nexButton = document.getElementById('next-button');
