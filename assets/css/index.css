@@ -39,6 +39,8 @@ h1, h2, h3 {
     background-color: #1a1a1d;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 5px 20px rgba(195, 7, 63, .25);
+    border-radius: .5rem;
 }
 
 /* Styles for the header in the game-container */
@@ -50,6 +52,8 @@ h1, h2, h3 {
     padding: 20px;
     height: fit-content;
     background-color: #c3073f;
+    border-top-right-radius: .5rem;
+    border-top-left-radius: .5rem;
 }
 
 .nav-items, .nav-items-toggle {
@@ -175,6 +179,7 @@ input[type=text], input[type=email], textarea {
     margin: 0 35%;
     padding: 10px;
     border-radius: .5rem;
+    box-shadow: 0 5px 20px rgba(195, 7, 63, .25);
 }
 
 #start-button:hover {
@@ -272,6 +277,8 @@ input[type=submit]:hover {
     justify-content: center;
     align-items: center;
     grid-gap: 10px;
+    box-shadow: 0 5px 20px rgba(195, 7, 63, .25);
+    border-radius: .5rem;
 }
 
 .difficulty-level-button {
@@ -301,6 +308,8 @@ input[type=submit]:hover {
     height: 600px;
     background-color: #1a1a1d;
     position: relative;
+    box-shadow: 0 5px 20px rgba(195, 7, 63, .25);
+    border-radius: .5rem;
 }
 
 /* Styles for the quistion area */
@@ -347,6 +356,7 @@ input[type=submit]:hover {
 
 .answer-right {
     background-color: green;
+    color: white;
 }
 
 .answer-wrong {
@@ -414,7 +424,12 @@ input[type=submit]:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: .5rem;
 
+}
+
+.score-name {
+    color: #c3073f;
 }
 
 #message-and-image-holder {

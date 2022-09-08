@@ -514,41 +514,41 @@ function showOverAllScore() {
   messageAndImageHolder.innerHTML = 
   (result >= 100) ? // when the user answers 100% right
   `
-  <p id="overall-score-message">Congratulations ${username}! You have won the World Cup</p>
+  <p id="overall-score-message">Congratulations <span class="score-name">${username}!</span> You have won the World Cup</p>
   <div class="image-holder" id="image-holder">
       <img src="./assets/images/world-cup-trophy.jpg" alt="World Cup trophy">
   </div>
   `:
   (result >= 80) ? // when the user answers above 80% right
   `
-  <p id="overall-score-message">Congratulations ${username}! You have won the Champions League</p>
+  <p id="overall-score-message">Congratulations <span class="score-name">${username}!</span> You have won the Champions League</p>
   <div class="image-holder" id="image-holder">
       <img src="./assets/images/champions-league-trophy.jpg" alt="champions league trophy">
   </div>
   `:
   (result >= 60) ? // when the user answers above 60% right
   `
-  <p id="overall-score-message">Congratulations ${username}! You have won the Europa League</p>
+  <p id="overall-score-message">Congratulations <span class="score-name">${username}!</span> You have won the Europa League</p>
   <div class="image-holder" id="image-holder">
       <img src="./assets/images/europa-league-trophy-removebg-preview.jpg" alt="World Cup trophy">
   </div>
   `:
   (result >= 40) ?  // when the user answers above 40% right
   `
-  <p id="overall-score-message">Congratulations ${username}! You have won the Premier League</p>
+  <p id="overall-score-message">Congratulations <span class="score-name">${username}!</span> You have won the Premier League</p>
   <div class="image-holder" id="image-holder">
       <img src="./assets/images/premier-league-trophy.jpg" alt="World Cup trophy">
   </div>
   `: 
   (result >= 20) ? // when the user answers above 20% right
   `
-  <p id="overall-score-message">Congratulations ${username}! You have won the Conference League</p>
+  <p id="overall-score-message">Congratulations <span class="score-name"></span>${username}!</span> You have won the Conference League</p>
   <div class="image-holder" id="image-holder">
       <img src="./assets/images/conference-league-trophy.jpg" alt="World Cup trophy">
   </div>
   `: // when the user answer under 10% right
   `
-  <p id="overall-score-message">You didn't win any trophies this time ${username}:(  Better luck next time!</p>
+  <p id="overall-score-message">You didn't win any trophies this time <span class="score-name">${username}:( </span> Better luck next time!</p>
   `;             
 }
 
