@@ -6,7 +6,6 @@ const restartButton = document.getElementById('restart-button');
 const timerBar = document.getElementById('timer');
 const messageAndImageHolder = document.getElementById('message-and-image-holder');
 let username;
-console.log(username);
 
 // close menu when clicked outside it
 window.addEventListener('mouseup', function(e) {
@@ -31,17 +30,14 @@ function openMenu(){
 // Navigate section to section
 function linkNavigation (event) {
     let elementId = event.target.id;
-    console.log(elementId);
     let infoSection = document.getElementById('info-section');
     let home = document.getElementById('home');
     let contactSection = document.getElementById('contact-section')
     if (elementId === 'home-link' || elementId === 'toggle-home-link') {
-        console.log('Home')
         infoSection.classList.add('hidden');
         contactSection.classList.add('hidden');
         home.classList.remove('hidden');
     } else if (elementId === 'rules-link' || elementId === 'toggle-rules-link') {
-        console.log('Contact or Rules')
         infoSection.classList.remove('hidden');
         home.classList.add('hidden');
         contactSection.classList.add('hidden');
@@ -337,14 +333,12 @@ function startGame(e) {
 
   function checkDifficultyLevel(event) {
     selectedDiffulty = String(event.target.id);
-    console.log(selectedDiffulty);
     newData = questions.filter(question => {
       return question.difficulty === selectedDiffulty;
     });
   
     lastQuestion = newData.length - 1;
   
-    console.log(newData);
     let startSection = document.getElementById('start-page');
     let quizSection = document.getElementById('quiz-section');
     let restartSection = document.getElementById('restart');
@@ -470,7 +464,6 @@ function timingQuestions() {
   let timeDivWidth = 210; // 210px
   let timeDivWidthForEverySecond = timeDivWidth / timeForEveryQuestion; // 7px
   if (currentTime <= timeForEveryQuestion) {
-    console.log(currentTime);
     timerBar.style.width = currentTime * timeDivWidthForEverySecond + 'px';
     currentTime++;
   }
