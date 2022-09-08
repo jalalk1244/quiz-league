@@ -206,6 +206,11 @@ input[type=text], input[type=email], textarea {
     margin-left: 20px;
 }
 
+.score-information img {
+    height: 30px;
+    width: 30px;
+}
+
 /* Style for the contact form */
 .contact-container {
     display: grid;
