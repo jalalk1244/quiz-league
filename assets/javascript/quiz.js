@@ -546,7 +546,7 @@ function showOverAllScore() {
   <div class="image-holder" id="image-holder">
       <img src="./assets/images/conference-league-trophy.jpg" alt="World Cup trophy">
   </div>
-  `: // when the user answer under 10% right
+  `: // when the user answer under 20% right
   `
   <p id="overall-score-message">You didn't win any trophies this time <span class="score-name">${username}:( </span> Better luck next time!</p>
   `;             
