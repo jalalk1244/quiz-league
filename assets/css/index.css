@@ -521,7 +521,9 @@ input[type=submit]:hover {
     }
     
     #start-button {
-        width: 35%;
+        width: 120px;
+        height: 50px;
+        margin: 0 30%;
     }
 
     /* The contact form */
